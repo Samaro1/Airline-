@@ -1,0 +1,14 @@
+{% extends "flights/layout.html" %}
+
+{% block body %}
+
+<h1>
+    Flight path as thus:
+</h1>
+<h2>Departure from: {{flight.origin}}</h2>
+<h2>To arrive at: {{flight.destination}}</h2>
+
+<h2>Which will take {{flight.duration}} minutes</h2> 
+
+
+{% endblock %}
