@@ -8,7 +8,30 @@
 <h2>Departure from: {{flight.origin}}</h2>
 <h2>To arrive at: {{flight.destination}}</h2>
 
-<h2>Which will take {{flight.duration}} minutes</h2> 
+<h2>Which will take {{flight.duration}} minutes</h2>
+
+<h1>Passengers</h1>
+<ul>
+    {% for passenger in passengers %}
+    <li>{{passenger}}</li>
+    {% empty %}
+    <li>No passengers</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'index' %}">Back to flight</a>
+
+<h1>Add flight</h1>
+<form action="url 'book' flight.id" method="post">
+    {% csrf_token %}
+    <select name="passenger">
+        {% for passenger in non_passenger %}
+            <option value="{{passenger.id}}">{{passenger}}</option>
+            {%empty%}
+            <option value="null">no passengers</option>
+        {% endfor %}
+    </select>
+    <input type="submit">
+</form>
 
 
 {% endblock %}
